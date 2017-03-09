@@ -28,7 +28,6 @@
     [_loginButton addTarget:self action:@selector(loadClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_loginButton];
     
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 
