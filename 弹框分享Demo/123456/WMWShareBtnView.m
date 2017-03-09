@@ -85,6 +85,8 @@
 
 #pragma mark --- 固定按钮点击方法
 - (void) btnViewClicked:(UITapGestureRecognizer *)recognizer {
+    //发出通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"titleCall" object:self userInfo:nil];
     switch (recognizer.view.tag) {
         case 1000 :
         {

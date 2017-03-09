@@ -45,7 +45,10 @@
             temp = (([UIScreen mainScreen].bounds.size.width - 100) / 4 + 12) * 2;
         }
         self.contentViewHeight = temp + 55 + ([UIScreen mainScreen].bounds.size.width - 100) / 4;
-        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(disMissView)
+                                                     name:@"titleCall"
+                                                   object:nil];
         [self initContent];
     }
     return self;
@@ -115,6 +118,10 @@
                          [self removeFromSuperview];
                          [_contentView removeFromSuperview];
                      }];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"titleCall" object:nil];
 }
 
 @end
